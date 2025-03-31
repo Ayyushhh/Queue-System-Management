@@ -1,5 +1,5 @@
 import express from 'express';
-import { addJobToQueue } from './jobQueue.js';
+import { addJobToQueue } from './src/jobQueue.js';
 
 const app = express();
 app.use(express.json());

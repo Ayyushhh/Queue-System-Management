@@ -1,5 +1,5 @@
 import { Worker } from "bullmq";
-import { redisConnection } from "./redisConnection.js";
+import { redisConnection } from "./src/redisConnection.js";
 
 const worker = new Worker(
     "taskQueue", 
