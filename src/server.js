@@ -15,7 +15,7 @@ app.post("/add-task", async (req,res) => {
 
 app.get("/jobs", getAllJobs);
 app.get("/status/:id", getJobById);
-app.get("/remove-job/:id", removeJobById);
+app.delete("/remove-job/:id", removeJobById);
 
 app.listen(PORT, (req,res) => {
     console.log(`Server is running on port ${PORT}`);
