@@ -1,5 +1,5 @@
 import express from 'express';
-import { addJobToQueue } from './src/jobQueue.js';
+import { addJobToQueue, getAllJobs, getJobById, removeJobById } from './jobQueue.js';
 
 const app = express();
 app.use(express.json());
@@ -11,7 +11,11 @@ app.post("/add-task", async (req,res) => {
     res.json({
         message: "Task Addded to queue"
     });
-})
+});
+
+app.get("/jobs", getAllJobs);
+app.get("/status/:id", getJobById);
+app.get("/remove-job/:id", removeJobById);
 
 app.listen(PORT, (req,res) => {
     console.log(`Server is running on port ${PORT}`);
